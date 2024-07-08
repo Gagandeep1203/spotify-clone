@@ -69,6 +69,5 @@ body::-webkit-scrollbar-thumb:hover {
   width: 1200%;
   background-color: rgb(54, 54, 54);
   position: absolute;
-  top: -17px;
-  border: 17px;
+  top: -17px; 
 }
