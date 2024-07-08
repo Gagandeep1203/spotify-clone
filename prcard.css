@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  font-family: "poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.image {
+  position: relative;
+  height: 170px;
+  width: 170px;
+  background-color: rgb(69, 139, 244);
+  border-radius: 50%;
+  padding: 3px;
+}
+.image .profileimg {
+  height: 100%;
+  border-radius: 50%;
+  width: 100%;
+  object-fit: cover;
+  padding: 2px;
+  background-color: white;
+}
+.prcard {
+  width: 370px;
+  max-width: 100%;
+  box-shadow: 10px 4px 10px rgb(69, 139, 244, 1);
+  background-color: rgb(79, 3, 150);
+  padding: 7px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hlo {
+  color: aliceblue;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 4px;
+  flex-direction: column;
+}
+.name {
+  font-size: 22px;
+}
+.bn {
+  display: flex;
+
+  justify-content: space-between;
+}
+.bn1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 34px;
+  margin: 4px;
+  background-color: rgb(229, 235, 237);
+}
+

@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+  padding: 0;
+  background-color: rgb(242, 242, 242);
+  color: rgb(0, 99, 199);
+}
+* {
+  font-family: "poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(7, 7, 49);
+}
+nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+nav ul li {
+  list-style: none;
+  margin: 24px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-style: normal;
+}
+nav ul li a:hover {
+  color: rgb(215, 137, 34);
+  font-size: 1.04rem;
+}
+.lef {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.firsec {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 70px;
+  height: 230px;
+}
+.firsec div {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+.firsec div img {
+  border-radius: 20%;
+}
+
+.lefsec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.4rem;
+}
+.lefsec > div {
+  margin-top: 10px;
+  font-style: italic;
+}
+.name {
+  font-size: 3.2rem;
+  color: rgb(182, 157, 205);
+}
+.lefsec > div {
+  margin-top: 10px;
+  font-style: italic;
+}
+#element {
+  color: rgb(36, 36, 210);
+  font-weight: bold;
+}
+.secsec {
+  margin: auto;
+  background-color: rgb(0, 46, 46);
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+h1 {
+  color: rgb(139, 139, 247);
+  font-weight: bold;
+  font-size: 1.9 rem;
+}
+.scroll {
+  top: 0;
+  z-index: 80;
+  position: fixed;
+  height: 2px;
+  width: 100%;
+  background-color: rgb(228, 13, 13);
+  scale: 0 1;
+  animation: scrollw linear;
+  animation-timeline: scroll();
+}
+@keyframes scrollw {
+  to {
+    scale: 1 1;
+  }
+}
+
+@keyframes scrollw1 {
+  to {
+    scale: 1 1;
+  }
+}
+.fill {
+  background-color: blueviolet;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fill2 {
+  background-color: antiquewhite;
+  width: 90%;
+  height: 90%;
+}
+.lefani {
+  top: 50;
+  z-index: 80;
+  position: fixed;
+  width: 2px;
+  height: 100%;
+  background-color: rgb(228, 13, 13);
+  scale: 1 0;
+  animation: scrollw1 linear;
+  animation-timeline: scroll();
+}
+.rigani {
+  top: 50;
+  z-index: 80;
+  position: fixed;
+  height: 2px;
+  width: 100%;
+  background-color: rgb(228, 13, 13);
+  scale: 0 1;
+  animation: scrollw linear;
+  animation-timeline: scroll();
+}

@@ -1,0 +1,38 @@
+.container {
+  height: 700px;
+  border: 1px solid red;
+  background-color: yellow;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "a a a"
+    "b b b"
+    "c c d";
+}
+.c0 .box1 {
+  border: 1px solid black;
+  background-color: aliceblue;
+
+  grid-area: a;
+}
+.box2 {
+  border: 1px solid black;
+  background-color: aliceblue;
+
+  grid-area: b;
+}
+.box3 {
+  border: 1px solid black;
+  background-color: blue;
+  height: 100px;
+  width: 100px;
+  grid-area: c;
+}
+.box4 {
+  border: 1px solid black;
+  background-color: aliceblue;
+  height: 100px;
+  width: 100px;
+  grid-area: d;
+}
