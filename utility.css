@@ -70,5 +70,20 @@ body::-webkit-scrollbar-thumb:hover {
   background-color: rgb(54, 54, 54);
   position: absolute;
   top: -17px;
-  border: 2px solid black;
+}
+.plasng img {
+  width: 13px;
+  position: relative;
+  top: 3px;
+}
+.plasng {
+  width: 9px;
+}
+.songlis {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  width: 100%;
+}
+.songlis ul {
+  list-style: decimal;
 }
