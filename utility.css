@@ -87,3 +87,6 @@ body::-webkit-scrollbar-thumb:hover {
 .songlis ul {
   list-style: decimal;
 }
+.songlis ul li {
+  padding: 4px;
+}

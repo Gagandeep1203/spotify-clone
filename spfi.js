@@ -11,7 +11,7 @@ async function gesongs() {
   for (let index = 0; index < as.length; index++) {
     const element = as[index];
     if (element.href.endsWith(".mp3")) {
-      songs.push(element.href);
+      songs.push(element.href.split("mussic")[1]);
     }
   }
 
@@ -31,7 +31,7 @@ async function main() {
   // Iterate over each property in the 'aud' object (assuming 'aud' is an object)
   for (const key in aud) {
     if (aud.hasOwnProperty(key)) {
-      songul.innerHTML += `<li>${aud[key]}</li>`;
+      songul.innerHTML += `<li>${aud[key].replaceAll("%20", " ")}</li>`;
     }
   }
 }
