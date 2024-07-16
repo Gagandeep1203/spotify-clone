@@ -20,12 +20,12 @@
 }
 .heading {
   font-weight: bold;
-  gap: 17px;
+  gap: 10px;
   padding-top: 20px;
   padding: 4px;
   font-size: 10px;
-  width: 100%;
-  left: 10px;
+  left: 1px;
+  margin-left: 4px;
 }
 /* For WebKit browsers (like Chrome, Safari) */
 /* You can adjust colors and dimensions as needed */
@@ -85,8 +85,32 @@ body::-webkit-scrollbar-thumb:hover {
   width: 100%;
 }
 .songlis ul {
-  list-style: decimal;
+  list-style: none;
+  overflow: auto;
+  height: 500px;
+  margin-bottom: 17px;
 }
 .songlis ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 4px;
+  border: 2px solid rgba(114, 113, 113, 0.95);
+  border-radius: 7px;
+  padding-left: 2px;
+  padding-right: 2px;
+  gap: 2px;
+}
+.headphns {
+  width: 29px;
+}
+.plicon {
+  width: 29px;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+.planow {
+  display: flex;
+  width: 70px;
+  /*margin-right: 24px;*/
 }
