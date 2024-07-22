@@ -2,7 +2,7 @@ console.log("js here");
 
 async function gesongs() {
   try {
-    let response = await fetch("http://127.0.0.1:5500/css/mussic/");
+    let response = await fetch("http://127.0.0.1:5501/mussic/");
     let htmlContent = await response.text();
     let div = document.createElement("div");
     div.innerHTML = htmlContent;
@@ -30,7 +30,8 @@ var currentSongUrl = "";
 async function main() {
   let aud = await gesongs();
   console.log(aud);
-
+  let cd = document.querySelector(".cards");
+  cd.innerHTML = "";
   // Select the <ul> element with class "songlis" (assuming it exists in your HTML)
   let songul = document.querySelector(".songlis").getElementsByTagName("ul")[0];
 
@@ -41,11 +42,11 @@ async function main() {
   for (const song of aud) {
     songul.innerHTML += `
       <li>
-        <div s tyle="display: flex; gap: 13px; padding: 10px">
+        <div style="display: flex; gap: 10px; padding: 10px">
           <img class="headphns inver" src="headphns.svg" alt="" />
           <div class="info">
-            <div style="font-size: 10px;">${song.replaceAll("%20", " ")}</div>
-            <div style="font-size: 10px;">artist name</div>
+            <div style="font-size: 8px;">${song.replaceAll("%20", " ")}</div>
+            <div style="font-size: 9px;">artist name</div>
           </div>
         </div>
         <div class="planow">
@@ -53,6 +54,17 @@ async function main() {
           <img class="plicon inver" src="plasng.svg" alt="" />
         </div>
       </li>`;
+    cd.innerHTML += `<div class="card">
+<div class="pla"><img src="greenplay.svg" alt="" /></div>
+<img 
+  src= "heroicons-music_note-circle_cloudly.svg"
+  alt="img"
+/> 
+<div class ="hide " style="overflow-x: hidden;">
+<h2>${song.replaceAll("%20", " ")}</h2> </div>
+
+ 
+</div>`;
   }
 
   songul.querySelectorAll("li").forEach((li, index) => {
@@ -61,6 +73,30 @@ async function main() {
       let songUrl = aud[index].trim();
       playPauseSong(songUrl);
     });
+  });
+
+  Array.from(document.getElementsByClassName("card")).forEach((div, index) => {
+    div.addEventListener("click", () => {
+      // Retrieve the song URL and trim it if necessary
+      let songUrl = aud[index].trim();
+      playPauseSong(songUrl);
+    });
+  });
+
+  document.querySelector(".plabar .plabn").addEventListener("click", () => {
+    if (currentAudio.paused) {
+      currentAudio.play();
+    } else {
+      currentAudio.pause();
+    }
+  });
+
+  document.querySelector(".plabar .plaprev").addEventListener("click", () => {
+    if (currentAudio.paused) {
+      currentAudio.play();
+    } else {
+      currentAudio.pause();
+    }
   });
 }
 
@@ -78,7 +114,7 @@ function playPauseSong(songUrl) {
     if (currentAudio) {
       currentAudio.pause();
     }
-    currentAudio = new Audio("/css/mussic/" + songUrl);
+    currentAudio = new Audio("/mussic/" + songUrl);
     currentAudio.play();
     currentSongUrl = songUrl;
 
@@ -91,3 +127,27 @@ function playPauseSong(songUrl) {
 }
 
 main();
+/*#box {
+  background: orange;
+  height: 180px;
+  width: 400px;
+  margin: 10px -400px;
+  -webkit-animation-name: move;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: right;
+  -webkit-animation-timing-function: linear;
+}
+
+#box:hover {
+  -webkit-animation-play-state: paused;
+}
+
+@-webkit-keyframes move {
+  0% {
+    margin-left: -400px;
+  }
+  100% {
+    margin-left: 800px;
+  }
+}*/

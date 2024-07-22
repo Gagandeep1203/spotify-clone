@@ -7,6 +7,7 @@ body {
   background-color: rgba(0, 0, 0, 1);
   color: white;
 }
+
 .lef {
   width: 25vw;
 
@@ -38,11 +39,11 @@ body {
 }
 
 .librar {
-  position: relative; 
+  position: relative;
   min-height: 79vh;
   padding: 3px;
 }
-.bar{
+.bar {
   display: flex;
 }
 .liblogo {
@@ -114,7 +115,7 @@ body {
 }
 .card {
   width: 120px;
-  background-color: rgb(71 66 66 / 36%);
+  background-color: rgb(34 33 33 / 36%);
   padding: 10px;
   border-radius: 7px;
   padding: 9px;
@@ -128,16 +129,44 @@ body {
   padding-top: 4px;
 }
 .pla img {
-  height: 19px;
-  width: 19px;
+  height: 30px;
+  width: 30px;
 }
 .pla {
   position: absolute;
-  bottom: 74px;
+  bottom: 20px;
   left: 100px;
-  transition: all 0.4s ease-out;
   opacity: 0;
+  border-radius: 50%;
+
+  transition: all 0.3s ease-in-out;
 }
+
+.card:hover .pla {
+  bottom: 43px;
+  opacity: 1;
+}
+.card h2 {
+  font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover h2 {
+  animation: scrollText 4s linear infinite;
+  animation-direction: reverse;
+}
+
+@keyframes scrollText {
+  0% {
+    margin-left: -100px;
+  }
+  100% {
+    margin-left: 100px;
+  }
+}
+
 .b2n .signin:hover {
   font-size: 1.001rem;
   color: white;
@@ -148,19 +177,27 @@ body {
 }
 .plabar {
   position: fixed;
-  width: 100%;
+  width: 71%;
   height: 38px;
   background-color: rgb(228, 234, 232);
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: 30px;
+  bottom: 7px;
+  left: 27%;
 }
-.plabn { 
+.plabn {
   display: flex;
   justify-content: space-between;
   position: absolute;
-  left: 32%;
-   
+  left: 41%;
+  gap: 20px;
 }
-/*http://127.0.0.1:5500/css/mussic/
+.card h2 {
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.cards div:hover {
+  background-color: #3e372f;
+}
