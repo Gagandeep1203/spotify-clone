@@ -9,6 +9,7 @@ body {
 }
 
 .lef {
+  z-index: 0;
   width: 25vw;
 
   padding: 2px;
@@ -80,6 +81,10 @@ body {
 .b2n button {
   font-weight: bold;
   font-size: 14px;
+}
+.nav div {
+  display: flex;
+  gap: 13px;
 }
 .signin {
   background-color: rgb(33, 31, 31);
@@ -200,4 +205,48 @@ body {
 
 .cards div:hover {
   background-color: #3e372f;
+}
+.lis:hover {
+  background-color: #383636;
+}
+.ham:hover {
+  background-color: #c4bebe;
+}
+@media (max-width: 700px) {
+  .lef {
+    /* position: absolute;
+    left: -100%;
+     display: none;
+     */
+    position: absolute;
+    left: -100%;
+    transition: left 0.4s;
+  }
+  .rig {
+    width: 88vh;
+    height: 100vh;
+    transition: all 0.7s;
+  }
+  .rig .header {
+    width: 74vh;
+    transition: all 0.7s;
+  }
+  .plabar {
+    position: absolute;
+    width: 88vh;
+    left: 0px;
+    right: 0px;
+    transition: all 1s;
+  }
+  .plbarp {
+    width: 88vh;
+    position: relative;
+    top: 0px;
+    transition: all 1s;
+  }
+}
+@media (max-width: 1000px) {
+  .info {
+    display: none;
+  }
 }

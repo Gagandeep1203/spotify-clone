@@ -32,13 +32,10 @@ async function main() {
   console.log(aud);
   let cd = document.querySelector(".cards");
   cd.innerHTML = "";
-  // Select the <ul> element with class "songlis" (assuming it exists in your HTML)
-  let songul = document.querySelector(".songlis").getElementsByTagName("ul")[0];
+  let songul = document.querySelector(".songlis ul");
 
-  // Clear previous content if necessary
   songul.innerHTML = "";
 
-  // Iterate over each song in 'aud' array and generate <li> elements
   for (const song of aud) {
     songul.innerHTML += `
       <li>
@@ -54,22 +51,18 @@ async function main() {
           <img class="plicon inver" src="plasng.svg" alt="" />
         </div>
       </li>`;
-    cd.innerHTML += `<div class="card">
-<div class="pla"><img src="greenplay.svg" alt="" /></div>
-<img 
-  src= "heroicons-music_note-circle_cloudly.svg"
-  alt="img"
-/> 
-<div class ="hide " style="overflow-x: hidden;">
-<h2>${song.replaceAll("%20", " ")}</h2> </div>
-
- 
-</div>`;
+    cd.innerHTML += `
+      <div class="card">
+        <div class="pla"><img src="greenplay.svg" alt="" /></div>
+        <img src="heroicons-music_note-circle_cloudly.svg" alt="img"/>
+        <div class="hide" style="overflow-x: hidden;">
+          <h2>${song.replaceAll("%20", " ")}</h2>
+        </div>
+      </div>`;
   }
 
   songul.querySelectorAll("li").forEach((li, index) => {
     li.addEventListener("click", () => {
-      // Retrieve the song URL and trim it if necessary
       let songUrl = aud[index].trim();
       playPauseSong(songUrl);
     });
@@ -77,7 +70,6 @@ async function main() {
 
   Array.from(document.getElementsByClassName("card")).forEach((div, index) => {
     div.addEventListener("click", () => {
-      // Retrieve the song URL and trim it if necessary
       let songUrl = aud[index].trim();
       playPauseSong(songUrl);
     });
@@ -98,19 +90,33 @@ async function main() {
       currentAudio.pause();
     }
   });
+
+  let crs = document.querySelector(".cross");
+  crs.addEventListener("click", () => {
+    document.querySelector(".lef").style.left = "-100%";
+  });
+
+  let ham = document.querySelector(".ham");
+  ham.addEventListener("click", () => {
+    document.querySelector(".lef").style.left = "0";
+    document.querySelector(".lef").style.zIndex = "1";
+    Array.from(document.getElementsByClassName("info")).forEach((element) => {
+      element.style.display = "block";
+    });
+    document.querySelector(".lef").style.width = "50vh";
+  });
 }
 
-function playPauseSong(songUrl) {
-  // Check if the selected song is the same as the currently playing song
+function playPauseSong(songUrl, element) {
   if (currentSongUrl === songUrl) {
-    // If it's the same song, toggle play/pause
     if (currentAudio.paused) {
       currentAudio.play();
+      updateIcon(element, true);
     } else {
       currentAudio.pause();
+      updateIcon(element, false);
     }
   } else {
-    // If it's a different song, pause the current song (if any) and play the new one
     if (currentAudio) {
       currentAudio.pause();
     }
@@ -118,36 +124,20 @@ function playPauseSong(songUrl) {
     currentAudio.play();
     currentSongUrl = songUrl;
 
-    // Add event listener to reset currentAudio when the song ends
     currentAudio.addEventListener("ended", () => {
+      updateIcon(element, true);
       currentAudio = null;
       currentSongUrl = "";
     });
   }
+
+  function updateIcon(element, isPlaying) {
+    const icon =
+      element.querySelector(".plicon") || element.querySelector(".pla img");
+    if (icon) {
+      icon.src = isPlaying ? "pause.svg" : "plasng.svg";
+    }
+  }
 }
 
 main();
-/*#box {
-  background: orange;
-  height: 180px;
-  width: 400px;
-  margin: 10px -400px;
-  -webkit-animation-name: move;
-  -webkit-animation-duration: 4s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-direction: right;
-  -webkit-animation-timing-function: linear;
-}
-
-#box:hover {
-  -webkit-animation-play-state: paused;
-}
-
-@-webkit-keyframes move {
-  0% {
-    margin-left: -400px;
-  }
-  100% {
-    margin-left: 800px;
-  }
-}*/
