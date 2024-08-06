@@ -1,0 +1,23 @@
+.div1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: rgb(176, 116, 233);
+}
+.mg {
+  height: 20px;
+  width: 20px;
+  animation: floa1 2s infinite ease-out;
+}
+@keyframes floa1 {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

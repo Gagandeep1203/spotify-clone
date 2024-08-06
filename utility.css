@@ -1,3 +1,18 @@
+.scroll {
+  background-color: #942c2c;
+  height: 2px;
+  top: 0;
+  position: sticky;
+  z-index: 1;
+  scale: 0 1;
+  animation: scroll1 linear;
+  animation-timeline: scroll();
+}
+@keyframes scroll1 {
+  to {
+    scale: 1 1;
+  }
+}
 .flex {
   display: flex;
 }
@@ -95,8 +110,9 @@ body::-webkit-scrollbar-thumb:hover {
   align-items: center;
   justify-content: space-between;
   padding: 4px;
-  border: 2px solid rgba(114, 113, 113, 0.95);
-  border-radius: 7px;
+  border: 1px solid #181818;
+  border-radius: 2px;
+  box-shadow: 3px 3px rgb(21, 21, 20);
   padding-left: 2px;
   padding-right: 2px;
   gap: 2px;

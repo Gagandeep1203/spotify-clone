@@ -40,7 +40,7 @@ async function main() {
     songul.innerHTML += `
       <li>
         <div style="display: flex; gap: 10px; padding: 10px">
-          <img class="headphns inver" src="headphns.svg" alt="" />
+          <img class="headphns inver" src="img/headphns.svg" alt="" />
           <div class="info">
             <div style="font-size: 8px;">${song.replaceAll("%20", " ")}</div>
             <div style="font-size: 9px;">artist name</div>
@@ -48,13 +48,13 @@ async function main() {
         </div>
         <div class="planow">
           <span style="font-weight: bold;">play now</span>
-          <img class="plicon inver" src="plasng.svg" alt="" />
+          <img class="plicon inver" src="img/plasng.svg" alt="" />
         </div>
       </li>`;
     cd.innerHTML += `
       <div class="card">
-        <div class="pla"><img src="greenplay.svg" alt="" /></div>
-        <img src="heroicons-music_note-circle_cloudly.svg" alt="img"/>
+        <div class="pla"><img src="img/greenplay.svg" alt="" /></div>
+        <img src="img/heroicons-music_note-circle_cloudly.svg" alt="img"/>
         <div class="hide" style="overflow-x: hidden;">
           <h2>${song.replaceAll("%20", " ")}</h2>
         </div>
